@@ -134,15 +134,11 @@ var taskIncomplete = function() {
     bindTaskEvents(listItem, taskCompleted);
 }
 
-
-
 var ajaxRequest = function() {
     console.log("AJAX Request");
 }
 
 //The glue to hold it all together.
-
-
 //Set the click handler to the addTask function.
 addButton.onclick = addTask;
 addButton.addEventListener("click", addTask);
@@ -156,6 +152,8 @@ var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
     var editButton = taskListItem.querySelector("button.edit");
     var deleteButton = taskListItem.querySelector("button.delete");
 
+    console.log(taskListItem);
+    console.log('edit' + editButton);
 
     //Bind editTask to edit button.
     editButton.onclick = editTask;
@@ -169,7 +167,7 @@ var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
 //for each list item
 for (var i = 0; i < incompleteTaskHolder.children.length; i++) {
 
-    //bind events to list items chldren(tasksCompleted)
+    //bind events to list items children(tasksCompleted)
     bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
 }
 
